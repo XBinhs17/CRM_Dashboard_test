@@ -1,0 +1,44 @@
+<header class="wrapper-header">
+
+  <!-- Navigation - Slide from Right -->
+  <div class="group-header-left" [class.open]="menuOpen">
+    <nav class="header-left-nav">
+      <ul class="nav-links">
+        <li><a>Dashboards</a></li>
+        <li><a>Pages</a></li>
+        <li><a>Apps</a></li>
+        <li><a>Layouts</a></li>
+        <li><a>Help</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <!-- Right Side -->
+  <div class="group-header-right">
+    <div class="header-right-action">
+      <mat-icon class="header-right-icon">search</mat-icon>
+    </div>
+    <div class="header-right-action">
+      <mat-icon class="header-right-icon">forum</mat-icon>
+    </div>
+    <div class="header-right-action">
+      <mat-icon class="header-right-icon">notifications_active</mat-icon>
+    </div>
+    <div class="header-right-action">
+      <mat-icon class="header-right-icon">chat</mat-icon>
+    </div>
+    <div class="header-right-action">
+      <mat-icon class="header-right-icon">widgets</mat-icon>
+    </div>
+    <div class="header-right-action">
+      <mat-icon class="header-right-icon">contrast</mat-icon>
+    </div>
+    <div class="avatar">
+      <img src="https://res.cloudinary.com/dlteq4ism/image/upload/v1741162882/avt_dqsrbq.png" alt="avatar">
+    </div>
+    <!-- Menu icon (only for mobile) -->
+  </div>
+  <mat-icon class="menu-icon" (click)="toggleMenu()">menu</mat-icon>
+
+
+</header>

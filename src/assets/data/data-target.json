@@ -1,0 +1,64 @@
+[
+  {
+    "position": "UI Design",
+    "name": "Meeting with customer",
+    "description": "Discuss user requirements and finalize UI components.",
+    "avatars": [
+      "https://picsum.photos/200/300",
+      "https://picsum.photos/200/300",
+      "https://picsum.photos/200/300"
+    ],
+    "status": "Yet To Start"
+  },
+  {
+    "position": "Development",
+    "name": "User Module Testing",
+    "description": "Conduct unit testing for user authentication module.",
+    "avatars": [
+      "https://picsum.photos/200/300",
+      "https://picsum.photos/200/300"
+    ],
+    "status": "In Progress"
+  },
+  {
+    "position": "Phase 2.6 QA",
+    "name": "Sales report page",
+    "description": "QA review of sales report generation and layout.",
+    "avatars": [
+      "https://picsum.photos/200/300",
+      "https://picsum.photos/200/300",
+      "https://picsum.photos/200/300"
+    ],
+    "status": "Completed"
+  },
+  {
+    "position": "UI Design",
+    "name": "Wireframe Approval",
+    "description": "Review and approve homepage wireframes with stakeholders.",
+    "avatars": [
+      "https://picsum.photos/200/300",
+      "https://picsum.photos/200/300"
+    ],
+    "status": "In Progress"
+  },
+  {
+    "position": "Development",
+    "name": "API Integration",
+    "description": "Integrate backend APIs with the frontend dashboard.",
+    "avatars": [
+      "https://picsum.photos/200/300",
+      "https://picsum.photos/200/300"
+    ],
+    "status": "Yet to start"
+  },
+  {
+    "position": "Phase 2.6 QA",
+    "name": "Bug Fix Verification",
+    "description": "Verify fixes for critical bugs reported in sprint 2.5.",
+    "avatars": [
+      "https://picsum.photos/200/300",
+      "https://picsum.photos/200/300"
+    ],
+    "status": "Completed"
+  }
+]

@@ -1,0 +1,67 @@
+<div class="wrapper-card-apps">
+  <div class="row card-top">
+
+    <div class="col-xl-2">
+      <div class="logo bg-light"><img
+          src="https://preview.keenthemes.com/metronic8/demo1/assets/media/svg/brand-logos/volicity-9.svg" alt="logo">
+      </div>
+    </div>
+
+    <div class="col-xl-10">
+      <div class="card-row-top ">
+        <div class="card-info">
+          <div class="card-title">
+            <a>CRM Dashboard</a> <span>In Progress</span>
+          </div>
+          <div class="card-tag">
+            #1 Tool to get started with Web Apps any Kind &amp; size
+          </div>
+        </div>
+        <div class="card-action">
+          <button>Add User</button>
+          <button class="btn btn-primary">Add Target</button>
+          <button><mat-icon>more_horiz</mat-icon></button>
+        </div>
+      </div>
+
+      <div class="card-row-bottom">
+
+        <div class="bottom-statistical">
+          <div class="statistical-card">
+            <h5>29 Jan, 2025</h5>
+            <h6>Due Date</h6>
+          </div>
+          <div class="statistical-card">
+            <h5><mat-icon class="red-icon">arrow_downward</mat-icon>75</h5>
+            <h6>Open Tasks</h6>
+          </div>
+          <div class="statistical-card">
+            <h5><mat-icon class="green-icon">arrow_upward</mat-icon> $15,000</h5>
+            <h6>Budget Spent</h6>
+          </div>
+        </div>
+
+        <div class="group-user">
+          <div class="avatar-list">
+            <img *ngFor="let user of visibleUsers" [src]="user.avatar" class="avatar-img" alt="avt" />
+            <div *ngIf="extraCount > 0" class="avatar-img avatar-extra">+{{ extraCount }}</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="row card-bottom">
+    <div class="col-md-12 p-0">
+      <div class="card-bottom-menu">
+        <ul>
+          <li *ngFor="let tab of tabs" routerLinkActive="active">
+            <a [routerLink]="tab.toLowerCase()">{{ tab }}</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+</div>

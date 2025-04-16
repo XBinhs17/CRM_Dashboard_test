@@ -1,0 +1,62 @@
+<div class="header-targets-page">
+  <div class="header-targets-left">
+    <h4>Project Targets</h4>
+    <div class="filter-selected">
+      <h5>by Recent Update</h5>
+      <mat-icon class="icon-down">arrow_downward</mat-icon>
+    </div>
+  </div>
+  <div class="header-targets-right">
+    <button><mat-icon>grid_view</mat-icon></button>
+    <button><mat-icon>view_list</mat-icon></button>
+    <select class="native-select" [formControl]="selected" title="Select Time Period">
+      <option value="recently">Recently Updated</option>
+      <option value="lastmonth">Last Month</option>
+      <option value="lastquarter">Last Quarter</option>
+      <option value="lastyear">Last Year</option>
+    </select>
+  </div>
+</div>
+
+<div class="content-targets-page">
+  <div cdkDropListGroup class="content-target-group">
+    <div class="example-container">
+      <div class="yet">
+        <h2>Yet To Start <span>2</span></h2>
+        <mat-icon>dashboard_customize</mat-icon>
+      </div>
+
+      <div cdkDropList [cdkDropListData]="yetToStart" class="example-list" (cdkDropListDropped)="drop($event)">
+        <div class="example-box" *ngFor="let item of yetToStart" cdkDrag>
+          <targets-card [task]="item"></targets-card>
+        </div>
+      </div>
+    </div>
+
+    <div class="example-container">
+      <div class="inpro">
+        <h2>In Progress <span>2</span></h2>
+        <mat-icon>dashboard_customize</mat-icon>
+      </div>
+
+
+      <div cdkDropList [cdkDropListData]="inProgress" class="example-list" (cdkDropListDropped)="drop($event)">
+        <div class="example-box" *ngFor="let item of inProgress" cdkDrag>
+          <targets-card [task]="item"></targets-card>
+        </div>
+      </div>
+    </div>
+
+    <div class="example-container">
+      <div class="done">
+        <h2>Completed <span>2</span></h2>
+        <mat-icon>dashboard_customize</mat-icon>
+      </div>
+      <div cdkDropList [cdkDropListData]="completed" class="example-list" (cdkDropListDropped)="drop($event)">
+        <div class="example-box" *ngFor="let item of completed" cdkDrag>
+          <targets-card [task]="item"></targets-card>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

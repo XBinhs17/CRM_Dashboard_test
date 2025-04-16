@@ -1,0 +1,8 @@
+<div class="task-card">
+  <div class="task-title">{{ task.name }}</div>
+  <div class="task-position">{{ task.position }}</div>
+  <div class="task-description">{{ task.description }}</div>
+  <div class="task-avatars">
+    <img *ngFor="let avatar of task.avatars" [src]="avatar" alt="Avatar" />
+  </div>
+</div>

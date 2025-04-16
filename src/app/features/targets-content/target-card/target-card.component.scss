@@ -1,0 +1,31 @@
+.task-card {
+  padding: 12px;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 14px;
+
+  .task-title {
+    font-weight: bold;
+  }
+
+  .task-position {
+    font-style: italic;
+    color: gray;
+  }
+
+  .task-description {
+    margin: 8px 0;
+  }
+
+  .task-avatars {
+    display: flex;
+    gap: 5px;
+
+    img {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+    }
+  }
+}

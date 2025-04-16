@@ -91,15 +91,26 @@
         justify-content: space-between;
         align-items: center;
 
-        mat-icon{
-          color: #99A1B7;
-          transition: all .1s linear;
+        button {
+          padding: 5px;
+          border: none;
+          background-color: transparent;
+          border-radius: 8px;
 
-          padding: 5px 5px;
-
-          &:hover{
-            color: #1B84FF;
+          &:hover {
             background-color: #bddcff;
+            mat-icon {
+              color: #1B84FF;
+              transition: all .2s ease-in-out;
+            }
+          }
+
+          mat-icon {
+            color: #99A1B7;
+            padding: 0;
+            margin: 0;
+            vertical-align: middle;
+            transition: all .1s linear;
           }
         }
 
@@ -131,26 +142,21 @@
     }
 
     .example-list {
-      border: solid 1px #ccc;
       min-height: 60px;
-      background: white;
       border-radius: 4px;
-      overflow: hidden;
       display: block;
       margin-top: 10px;
     }
 
     .example-box {
-      padding: 20px 10px;
-      border-bottom: solid 1px #ccc;
+      padding: 15px 0;
       color: rgba(0, 0, 0, 0.87);
       display: flex;
       flex-direction: row;
       align-items: center;
-      justify-content: space-between;
+      justify-content: center;
       box-sizing: border-box;
       cursor: move;
-      background: white;
       font-size: 14px;
     }
 

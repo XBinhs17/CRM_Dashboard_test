@@ -23,7 +23,7 @@
     <div class="example-container">
       <div class="yet">
         <h2>Yet To Start <span>2</span></h2>
-        <mat-icon>dashboard_customize</mat-icon>
+        <button><mat-icon>dashboard_customize</mat-icon></button>
       </div>
 
       <div cdkDropList [cdkDropListData]="yetToStart" class="example-list" (cdkDropListDropped)="drop($event)">
@@ -36,7 +36,7 @@
     <div class="example-container">
       <div class="inpro">
         <h2>In Progress <span>2</span></h2>
-        <mat-icon>dashboard_customize</mat-icon>
+        <button><mat-icon>dashboard_customize</mat-icon></button>
       </div>
 
 
@@ -50,7 +50,7 @@
     <div class="example-container">
       <div class="done">
         <h2>Completed <span>2</span></h2>
-        <mat-icon>dashboard_customize</mat-icon>
+        <button><mat-icon>dashboard_customize</mat-icon></button>
       </div>
       <div cdkDropList [cdkDropListData]="completed" class="example-list" (cdkDropListDropped)="drop($event)">
         <div class="example-box" *ngFor="let item of completed" cdkDrag>

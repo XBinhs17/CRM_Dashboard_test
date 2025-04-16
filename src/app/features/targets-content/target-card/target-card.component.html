@@ -1,8 +1,21 @@
 <div class="task-card">
+  <div class="task-position">
+    <span>{{ task.position }}</span>
+    <button><mat-icon>dashboard_customize</mat-icon></button>
+  </div>
   <div class="task-title">{{ task.name }}</div>
-  <div class="task-position">{{ task.position }}</div>
   <div class="task-description">{{ task.description }}</div>
-  <div class="task-avatars">
-    <img *ngFor="let avatar of task.avatars" [src]="avatar" alt="Avatar" />
+  <div class="group-bottom-card">
+    <div class="task-avatars">
+      <img *ngFor="let avatar of task.avatars" [src]="avatar" alt="Avatar" />
+    </div>
+    <div class="group-icon">
+      <div class="icon-data">
+        <mat-icon>attach_file </mat-icon> <span>{{ task.file }}</span>
+      </div>
+      <div class="icon-data">
+        <mat-icon>chat </mat-icon> <span>{{ task.message }}</span>
+      </div>
+    </div>
   </div>
 </div>

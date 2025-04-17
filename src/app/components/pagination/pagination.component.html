@@ -1,0 +1,14 @@
+<div class="wrapper-pagination">
+  <button (click)="prevPage()" [disabled]="currentPage === 1">&lt;</button>
+
+  <button
+    *ngFor="let page of paginationRange"
+    [disabled]="page === currentPage"
+    [class.active]="page === currentPage"
+    (click)="goToPage(page)">
+    {{ page }}
+  </button>
+
+  <button (click)="nextPage()" [disabled]="currentPage === totalPages">&gt;</button>
+
+</div>

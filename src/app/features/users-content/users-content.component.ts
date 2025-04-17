@@ -14,6 +14,7 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { UserItem } from '../../shared/types/userItem';
 import { NgFor } from '@angular/common';
 import { UserCardComponent } from './user-card/user-card.component';
+import { PaginationComponent } from '../../components/pagination/pagination.component';
 
 @Component({
   selector: 'user-conent',
@@ -27,6 +28,7 @@ import { UserCardComponent } from './user-card/user-card.component';
     MatGridListModule,
     NgFor,
     UserCardComponent,
+    PaginationComponent,
   ],
 })
 export class UsersContentComponent implements OnInit {
@@ -54,64 +56,15 @@ export class UsersContentComponent implements OnInit {
     this.userService.fetchUsers();
   }
 
+  onPageChange(page: number) {
+    this.currentPage = page;
+    this.updatePageUsers();
+  }
+
   updatePageUsers() {
     const start = (this.currentPage - 1) * this.itemsPerPage;
     const end = start + this.itemsPerPage;
     this.pagedUsers = this.users.slice(start, end);
-
-    //upadte thêm hiển thị số trang
     this.totalPages = Math.ceil(this.users.length / this.itemsPerPage);
-    this.paginationRange = this.getPaginationRange();
-  }
-
-  getPaginationRange(): (number | string)[] {
-    const total = this.totalPages;
-    const current = this.currentPage;
-    const delta = 2;
-    const range: (number | string)[] = [];
-
-    if (total <= 4) {
-      for (let i = 1; i <= total; i++) {
-        range.push(i);
-      }
-    } else {
-      range.push(1);
-
-      if (current > delta + 2) {
-        range.push('...');
-      }
-
-      const start = Math.max(2, current - delta);
-      const end = Math.min(total - 1, current + delta);
-      for (let i = start; i <= end; i++) {
-        range.push(i);
-      }
-
-      if (current < total - delta - 1) {
-        range.push('...');
-      }
-      range.push(total);
-    }
-    return range;
-  }
-
-  goToPage(page: number | string){
-    if(typeof page === 'number'){
-      this.currentPage = page;
-      this.updatePageUsers();
-    }
-  }
-  nextPage() {
-    if (this.currentPage < this.totalPages) {
-      this.currentPage++;
-      this.updatePageUsers();
-    }
-  }
-
-  prevPage() {
-    if (this.currentPage > 1) {
-      this.currentPage--;
-      this.updatePageUsers();
-    }
   }
 }

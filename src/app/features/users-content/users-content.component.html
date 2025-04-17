@@ -29,17 +29,8 @@
 
 
   <div class="users-footer">
-    <button (click)="prevPage()" [disabled]="currentPage === 1">&lt;</button>
-
-    <button
-      *ngFor="let page of paginationRange"
-      [disabled]="page === currentPage"
-      [class.active]="page === currentPage"
-      (click)="goToPage(page)">
-      {{ page }}
-    </button>
-
-    <button (click)="nextPage()" [disabled]="currentPage === totalPages">&gt;</button>
+    <app-pagination [currentPage]="currentPage" [totalPages]="totalPages" (pageChange)="onPageChange($event)">
+    </app-pagination>
   </div>
 
 </div>

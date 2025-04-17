@@ -10,12 +10,7 @@
         <p>Current Status</p>
       </div>
       <div class="body-row-right">
-        <div class="status-used">
-          <p>Budget</p>
-          <p>${{ status.used }} of {{ status.total }} Used</p>
-        </div>
-        <mat-progress-bar class="prog-current" mode="determinate" [value]="progressValue()"></mat-progress-bar>
-        <div class="status-remain">{{ status.remainingTargets }} Targets are remaining</div>
+       <progress-status [label]="'Budget'" [used]="status.used" [total]="status.total" [remainingTargets]="status.remainingTargets"/>
       </div>
     </div>
 
@@ -70,12 +65,9 @@
       <div class="body-row-left">
         <p>Manage Budget</p>
       </div>
+
       <div class="body-row-right">
-        <div class="budget-input-wrapper">
-          <input type="text" [value]="'$' + formattedValue" readonly placeholder="number" />
-          <button class="btn-decrease" type="button" (click)="decrease()">−</button>
-          <button class="btn-increase" type="button" (click)="increase()">+</button>
-        </div>
+        <quantity-input [value]="value" [min]="1000" [max]="50000" [step]="1000" (valueChange)="value = $event" />
       </div>
     </div>
 

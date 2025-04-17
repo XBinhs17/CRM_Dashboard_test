@@ -14,6 +14,8 @@ import { NgIf } from '@angular/common';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { QuantityInputComponent } from '../../components/quantity-input/quantity-input.component';
+import { ProgressStatusComponent } from '../../components/progress-status/progress-status.component';
 
 @Component({
   selector: 'budget-content',
@@ -26,6 +28,8 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
     MatRadioModule,
     MatCheckboxModule,
     MatSlideToggleModule,
+    QuantityInputComponent,
+    ProgressStatusComponent
   ],
 })
 export class BudgetContentComponent {

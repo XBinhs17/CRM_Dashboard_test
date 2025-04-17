@@ -87,6 +87,12 @@
       max-width: 100%;
       vertical-align: top;
 
+      .btn-create-target{
+        width: 100%;
+        font-weight: 600;
+        padding: 10px;
+      }
+
       .style-header-ex {
         display: flex;
         justify-content: space-between;
@@ -219,6 +225,8 @@
 
     .content-target-group {
       flex-direction: column;
+      width: 100%;
+      align-items: center;
     }
   }
 }

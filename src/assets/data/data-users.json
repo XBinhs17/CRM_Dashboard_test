@@ -268,5 +268,185 @@
     "earnings": "$7,700",
     "tasks": 25,
     "sales": "$113,400"
+  },
+  {
+    "id": 31,
+    "avatar": "https://randomuser.me/api/portraits/men/6.jpg",
+    "name": "Liam Turner",
+    "work": "Frontend Developer at WebWorks",
+    "earnings": "$12,500",
+    "tasks": 48,
+    "sales": "$210,300"
+  },
+  {
+    "id": 32,
+    "avatar": "https://randomuser.me/api/portraits/women/42.jpg",
+    "name": "Sophie Allen",
+    "work": "UX Designer at PixelPerfect",
+    "earnings": "$9,800",
+    "tasks": 33,
+    "sales": "$176,900"
+  },
+  {
+    "id": 33,
+    "avatar": "https://randomuser.me/api/portraits/men/7.jpg",
+    "name": "Ethan Wright",
+    "work": "DevOps Engineer at CloudNet",
+    "earnings": "$14,100",
+    "tasks": 60,
+    "sales": "$299,000"
+  },
+  {
+    "id": 34,
+    "avatar": "https://randomuser.me/api/portraits/women/43.jpg",
+    "name": "Ava Thompson",
+    "work": "Content Manager at WriteUp",
+    "earnings": "$6,400",
+    "tasks": 22,
+    "sales": "$98,500"
+  },
+  {
+    "id": 35,
+    "avatar": "https://randomuser.me/api/portraits/men/8.jpg",
+    "name": "Noah Harris",
+    "work": "Mobile Developer at Appify",
+    "earnings": "$11,900",
+    "tasks": 44,
+    "sales": "$204,300"
+  },
+  {
+    "id": 36,
+    "avatar": "https://randomuser.me/api/portraits/women/44.jpg",
+    "name": "Emily Clark",
+    "work": "Marketing Lead at AdScope",
+    "earnings": "$10,300",
+    "tasks": 39,
+    "sales": "$187,700"
+  },
+  {
+    "id": 37,
+    "avatar": "https://randomuser.me/api/portraits/men/9.jpg",
+    "name": "James Walker",
+    "work": "Security Analyst at SafeTech",
+    "earnings": "$13,600",
+    "tasks": 51,
+    "sales": "$241,000"
+  },
+  {
+    "id": 38,
+    "avatar": "https://randomuser.me/api/portraits/women/45.jpg",
+    "name": "Olivia Scott",
+    "work": "HR Manager at TeamCore",
+    "earnings": "$8,200",
+    "tasks": 30,
+    "sales": "$125,400"
+  },
+  {
+    "id": 39,
+    "avatar": "https://randomuser.me/api/portraits/men/10.jpg",
+    "name": "William Baker",
+    "work": "Cloud Architect at SkyBuild",
+    "earnings": "$15,300",
+    "tasks": 57,
+    "sales": "$312,800"
+  },
+  {
+    "id": 40,
+    "avatar": "https://randomuser.me/api/portraits/women/46.jpg",
+    "name": "Mia Carter",
+    "work": "Finance Analyst at MoneyMap",
+    "earnings": "$9,100",
+    "tasks": 27,
+    "sales": "$132,600"
+  },
+  {
+    "id": 41,
+    "avatar": "https://randomuser.me/api/portraits/men/11.jpg",
+    "name": "Benjamin Nelson",
+    "work": "Product Manager at LaunchHub",
+    "earnings": "$16,000",
+    "tasks": 63,
+    "sales": "$330,000"
+  },
+  {
+    "id": 42,
+    "avatar": "https://randomuser.me/api/portraits/women/47.jpg",
+    "name": "Ella Adams",
+    "work": "Graphic Designer at InkStudio",
+    "earnings": "$7,200",
+    "tasks": 23,
+    "sales": "$106,900"
+  },
+  {
+    "id": 43,
+    "avatar": "https://randomuser.me/api/portraits/men/12.jpg",
+    "name": "Henry Perez",
+    "work": "Backend Developer at DevRoot",
+    "earnings": "$13,800",
+    "tasks": 49,
+    "sales": "$220,700"
+  },
+  {
+    "id": 44,
+    "avatar": "https://randomuser.me/api/portraits/women/48.jpg",
+    "name": "Lily Mitchell",
+    "work": "Data Analyst at StatLog",
+    "earnings": "$8,700",
+    "tasks": 31,
+    "sales": "$143,200"
+  },
+  {
+    "id": 45,
+    "avatar": "https://randomuser.me/api/portraits/men/13.jpg",
+    "name": "Alexander Murphy",
+    "work": "Systems Engineer at InfraCore",
+    "earnings": "$14,600",
+    "tasks": 53,
+    "sales": "$265,000"
+  },
+  {
+    "id": 46,
+    "avatar": "https://randomuser.me/api/portraits/women/49.jpg",
+    "name": "Chloe Rogers",
+    "work": "SEO Specialist at RankFlow",
+    "earnings": "$6,900",
+    "tasks": 24,
+    "sales": "$99,800"
+  },
+  {
+    "id": 47,
+    "avatar": "https://randomuser.me/api/portraits/men/14.jpg",
+    "name": "Daniel Reed",
+    "work": "AI Engineer at IntelliNet",
+    "earnings": "$15,900",
+    "tasks": 58,
+    "sales": "$319,500"
+  },
+  {
+    "id": 48,
+    "avatar": "https://randomuser.me/api/portraits/women/50.jpg",
+    "name": "Harper Bell",
+    "work": "Operations Lead at FlowChain",
+    "earnings": "$10,800",
+    "tasks": 36,
+    "sales": "$172,400"
+  },
+  {
+    "id": 49,
+    "avatar": "https://randomuser.me/api/portraits/men/15.jpg",
+    "name": "Logan Campbell",
+    "work": "QA Engineer at TestLoop",
+    "earnings": "$11,400",
+    "tasks": 42,
+    "sales": "$194,300"
+  },
+  {
+    "id": 50,
+    "avatar": "https://randomuser.me/api/portraits/women/51.jpg",
+    "name": "Zoe Bailey",
+    "work": "Recruitment Specialist at TalentMatch",
+    "earnings": "$7,800",
+    "tasks": 28,
+    "sales": "$116,200"
   }
 ]

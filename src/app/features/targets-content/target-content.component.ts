@@ -40,6 +40,7 @@ export class TargetContentComponen implements OnInit{
   selected = new FormControl('recently');
 
   private targets = signal<TargetItem[]>([]);
+
   readonly yetToStart = computed(() =>
     this.targets().filter(t => t.status === 'Yet To Start')
   )
@@ -50,12 +51,14 @@ export class TargetContentComponen implements OnInit{
     this.targets().filter(t => t.status === 'Completed')
   )
 
-  constructor(public TargetsService: TargetsService){}
+  constructor(public targetsService: TargetsService){
+    effect(() =>{
+      this.targets.set(this.targetsService.targets());
+    })
+  }
 
   ngOnInit(): void {
-      this.TargetsService.getTargets().subscribe((data) =>{
-        this.targets.set(data);
-      });
+      this.targetsService.fetchTargets();
   }
 
   drop(event: CdkDragDrop<TargetItem[]>) {

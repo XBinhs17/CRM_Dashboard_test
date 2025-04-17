@@ -67,10 +67,10 @@ export class UsersContentComponent implements OnInit {
   getPaginationRange(): (number | string)[] {
     const total = this.totalPages;
     const current = this.currentPage;
-    const delta = 4;
+    const delta = 2;
     const range: (number | string)[] = [];
 
-    if (total <= 7) {
+    if (total <= 4) {
       for (let i = 1; i <= total; i++) {
         range.push(i);
       }

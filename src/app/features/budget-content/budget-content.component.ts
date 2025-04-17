@@ -15,7 +15,6 @@ import { MatRadioModule } from '@angular/material/radio';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 
-
 @Component({
   selector: 'budget-content',
   templateUrl: './budget-content.component.html',
@@ -27,7 +26,6 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
     MatRadioModule,
     MatCheckboxModule,
     MatSlideToggleModule,
-    
   ],
 })
 export class BudgetContentComponent {
@@ -56,11 +54,13 @@ export class BudgetContentComponent {
 
   constructor(private budgetService: BudgetService) {
     effect(() => {
-      const data = this.budgetService.getCurrentStatusSignal();
-      if (data.length > 0) {
-        this.currentStatus.set(data[0]);
-      }
+      const data = this.budgetService.budget();
+      this.currentStatus.set(data.length > 0 ? data[0] : null);
     });
+  }
+
+  ngOnInit(): void {
+    this.budgetService.fetchBudget();
   }
 
   progressValue = computed(() => {

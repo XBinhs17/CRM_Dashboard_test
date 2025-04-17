@@ -8,13 +8,6 @@
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
   border-radius: 10px;
 
-  .user-avatar img {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    object-fit: cover;
-  }
-
   .user-info {
     text-align: center;
     line-height: 1;
@@ -30,18 +23,5 @@
     justify-content: space-between;
     width: 100%;
     margin-top: 0.5rem;
-
-    .box-info {
-      text-align: center;
-      flex: 1;
-      border: 1px dashed #c7c7c7;
-      padding: 10px;
-      border-radius: 10px;
-
-      h6{
-        line-height: 1;
-        margin: 0;
-      }
-    }
   }
 }

@@ -21,7 +21,7 @@
 <div class="content-targets-page">
   <div cdkDropListGroup class="content-target-group">
 
-     <!-- Yet To Start -->
+     <!-- Yet To Start - tách -->
      <div class="example-container">
       <div class="yet">
         <h2>Yet To Start <span>{{ yetToStart().length }}</span></h2>
@@ -30,7 +30,7 @@
       <div cdkDropList [cdkDropListData]="yetToStart()" class="example-list" (cdkDropListDropped)="drop($event)">
         <div class="example-box" *ngFor="let item of yetToStart()" cdkDrag>
           <targets-card [task]="item"></targets-card>
-        </div>
+        </div>  
       </div>
       <button class="btn btn-primary btn-create-target">Create new target</button>
     </div>

@@ -1,0 +1,13 @@
+.stat-box {
+  text-align: center;
+  flex: 1;
+  border: 1px dashed #c7c7c7;
+  padding: 10px;
+  border-radius: 10px;
+  min-width: 100px;
+
+  h6{
+    line-height: 1;
+    margin: 0;
+  }
+}

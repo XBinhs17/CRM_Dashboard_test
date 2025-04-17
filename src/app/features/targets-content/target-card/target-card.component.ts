@@ -1,6 +1,7 @@
 import { NgFor } from '@angular/common';
 import { Component, Input } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
+import { AvatarComponent } from '../../../components/avatar/avatar.component';
 
 @Component({
   selector: 'targets-card',
@@ -9,7 +10,8 @@ import { MatIconModule } from '@angular/material/icon';
   standalone: true,
   imports: [
     MatIconModule,
-    NgFor
+    NgFor,
+    AvatarComponent
   ],
 })
 export class TargetCardComponent {

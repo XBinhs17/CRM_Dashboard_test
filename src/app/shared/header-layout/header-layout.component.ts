@@ -1,12 +1,16 @@
 import { Component, ElementRef, HostListener, Renderer2 } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
+import { AvatarComponent } from '../../components/avatar/avatar.component';
 
 @Component({
   selector: 'header-layout',
   standalone: true,
   templateUrl: './header-layout.component.html',
   styleUrls: ['./header-layout.component.scss'],
-  imports: [MatIconModule],
+  imports: [
+    MatIconModule,
+    AvatarComponent
+  ],
 })
 export class HeaderLayoutComponent {
   menuOpen = false;

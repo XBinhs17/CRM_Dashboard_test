@@ -3,6 +3,7 @@ import { RouterOutlet } from '@angular/router';
 import { MatIconModule } from '@angular/material/icon';
 import { NgFor, NgIf } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { AvatarComponent } from '../../components/avatar/avatar.component';
 
 @Component({
   selector: 'card-apps',
@@ -10,7 +11,8 @@ import { RouterModule } from '@angular/router';
     NgFor,
     NgIf,
     RouterModule,
-    [MatIconModule]
+    MatIconModule,
+    AvatarComponent
   ],
   templateUrl: './card-apps.component.html',
   styleUrl: './card-apps.component.scss'

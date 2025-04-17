@@ -7,7 +7,7 @@
   <div class="task-description">{{ task.description }}</div>
   <div class="group-bottom-card">
     <div class="task-avatars">
-      <img *ngFor="let avatar of task.avatars" [src]="avatar" alt="Avatar" />
+      <app-avatar *ngFor="let avatar of task.avatars" [src]="avatar" [size]="35"></app-avatar>
     </div>
     <div class="group-icon">
       <div class="icon-data">

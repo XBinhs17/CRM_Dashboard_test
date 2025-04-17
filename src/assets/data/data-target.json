@@ -96,5 +96,17 @@
     "status": "Completed",
     "file": 1,
     "message": 3
+  },
+  {
+    "position": "Phase 2.6 QA",
+    "name": "Bug Fix Verification",
+    "description": "Verify fixes for critical bugs reported in sprint 2.5.",
+    "avatars": [
+      "https://picsum.photos/200/300",
+      "https://picsum.photos/200/300"
+    ],
+    "status": "kjhfgh",
+    "file": 1,
+    "message": 3
   }
 ]

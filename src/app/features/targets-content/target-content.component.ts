@@ -14,8 +14,9 @@ import {
   transferArrayItem,
 } from '@angular/cdk/drag-drop';
 import { TargetItem } from '../../shared/types/targetItem';
-import { NgFor, NgForOf } from '@angular/common';
+import { NgFor, NgForOf, NgIf } from '@angular/common';
 import { TargetCardComponent } from './target-card/target-card.component';
+import { MatTableModule } from '@angular/material/table';
 
 @Component({
   selector: 'targets-content',
@@ -31,16 +32,24 @@ import { TargetCardComponent } from './target-card/target-card.component';
     CdkDropList,
     CdkDrag,
     NgFor,
-    MatIconModule,
     NgForOf,
-    TargetCardComponent
+    MatIconModule,
+    TargetCardComponent,
+    MatTableModule,
   ],
 })
 export class TargetContentComponen implements OnInit{
   selected = new FormControl('recently');
 
-  private targets = signal<TargetItem[]>([]);
+  //state theo dõi đang dùng view nào
+  viewMode = signal<'grid' | 'table'>('grid');
 
+  public targets = signal<TargetItem[]>([]);
+
+  displayedColumns: string[] = ['name', 'status', 'updated'];
+
+
+  //kh fix cứng
   readonly yetToStart = computed(() =>
     this.targets().filter(t => t.status === 'Yet To Start')
   )

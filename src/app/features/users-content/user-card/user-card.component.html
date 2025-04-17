@@ -1,0 +1,23 @@
+<div class="card-user">
+  <div class="user-avatar">
+    <img [src]="user.avatar" [alt]="user.name" alt=""/>
+  </div>
+  <div class="user-info">
+    <h6>{{ user.name }}</h6>
+    <span>{{ user.work }}</span>
+  </div>
+  <div class="user-more">
+    <div class="box-info">
+      <h6>{{ user.earnings }}</h6>
+      <span>Earnings</span>
+    </div>
+    <div class="box-info">
+      <h6>{{ user.tasks }}</h6>
+      <span>Tasks</span>
+    </div>
+    <div class="box-info">
+      <h6>{{ user.sales }}</h6>
+      <span>Sales</span>
+    </div>
+  </div>
+</div>

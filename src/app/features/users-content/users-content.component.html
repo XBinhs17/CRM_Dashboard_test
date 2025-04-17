@@ -1,7 +1,7 @@
 <div class="wrapper-users">
   <div class="users-header">
     <div class="header-left">
-      <p>Users (38)</p>
+      <p>Users ({{ users.length }})</p>
       <form class="form-search">
         <input placeholder="Search" />
         <mat-icon>search</mat-icon>
@@ -24,16 +24,22 @@
     </div>
   </div>
   <div class="users-body">
-    <mat-grid-list cols="3" rowHeight="2:1">
-      <mat-grid-tile>
-        <div class="avatar-user">
-          <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="user name"/>
-        </div>
-        
-      </mat-grid-tile>
-    </mat-grid-list>
+    <app-user-card *ngFor="let user of pagedUsers" [user]="user"></app-user-card>
   </div>
-  <div class="users-footer">
 
+
+  <div class="users-footer">
+    <button (click)="prevPage()" [disabled]="currentPage === 1">&lt;</button>
+
+    <button
+      *ngFor="let page of paginationRange"
+      [disabled]="page === currentPage"
+      [class.active]="page === currentPage"
+      (click)="goToPage(page)">
+      {{ page }}
+    </button>
+
+    <button (click)="nextPage()" [disabled]="currentPage === totalPages">&gt;</button>
   </div>
+
 </div>

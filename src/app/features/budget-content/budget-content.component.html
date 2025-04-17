@@ -1,1 +1,113 @@
-<h1>budget content</h1>
+<div class="wrapper-budget">
+  <div class="budget-header">
+    <h2>Project Budget</h2>
+  </div>
+
+  <div class="budget-body">
+
+    <div class="body-row" *ngIf="currentStatus() as status">
+      <div class="body-row-left">
+        <p>Current Status</p>
+      </div>
+      <div class="body-row-right">
+        <div class="status-used">
+          <p>Budget</p>
+          <p>${{ status.used }} of {{ status.total }} Used</p>
+        </div>
+        <mat-progress-bar class="prog-current" mode="determinate" [value]="progressValue()"></mat-progress-bar>
+        <div class="status-remain">{{ status.remainingTargets }} Targets are remaining</div>
+      </div>
+    </div>
+
+    <div class="body-row">
+      <div class="body-row-left">
+        <p>Usage Character</p>
+      </div>
+      <div class="body-row-right">
+
+        <mat-radio-group class="group-usage-option" aria-label="Select an option">
+          <mat-radio-button class="usage-option-card" value="1">
+            <span class="custom-content">
+              <div class="title-usage">Precise Usage</div>
+              <div class="content-usage">
+                Withdraw money to your bank account per transaction under $50,000 budget
+              </div>
+            </span>
+          </mat-radio-button>
+
+          <mat-radio-button class="usage-option-card" value="2">
+            <span class="custom-content">
+              <div class="title-usage">Precise Usage</div>
+              <div class="content-usage">
+                Withdraw money to your bank account per transaction under $50,000 budget
+              </div>
+            </span>
+          </mat-radio-button>
+
+          <mat-radio-button class="usage-option-card" value="3">
+            <span class="custom-content">
+              <div class="title-usage">Precise Usage</div>
+              <div class="content-usage">
+                Withdraw money to your bank account per transaction under $50,000 budget
+              </div>
+            </span>
+          </mat-radio-button>
+        </mat-radio-group>
+
+      </div>
+    </div>
+
+    <div class="body-row">
+      <div class="body-row-left">
+        <p>Budget Notes</p>
+      </div>
+      <div class="body-row-right">
+        <textarea class="budget-textarea" placeholder="Enter your notes here..." rows="5"></textarea>
+      </div>
+    </div>
+
+    <div class="body-row">
+      <div class="body-row-left">
+        <p>Manage Budget</p>
+      </div>
+      <div class="body-row-right">
+        <div class="budget-input-wrapper">
+          <input type="text" [value]="'$' + formattedValue" readonly placeholder="number" />
+          <button class="btn-decrease" type="button" (click)="decrease()">−</button>
+          <button class="btn-increase" type="button" (click)="increase()">+</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="body-row">
+      <div class="body-row-left">
+        <p>Overuse Notifications</p>
+      </div>
+      <div class="body-row-right">
+        <div class="checkbox-group">
+          <mat-checkbox class="custom-checkbox">Email</mat-checkbox>
+          <mat-checkbox class="custom-checkbox">Phone</mat-checkbox>
+        </div>
+      </div>
+    </div>
+
+    <div class="body-row">
+      <div class="body-row-left">
+        <p>Allow Changes</p>
+      </div>
+      <div class="body-row-right">
+        <mat-slide-toggle color="primary" [checked]="true">Allowed</mat-slide-toggle>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="budget-footer">
+    <button class="btn-discard">
+      Discard
+    </button>
+    <button class="btn-save">
+      Save Change
+    </button>
+  </div>
+</div>

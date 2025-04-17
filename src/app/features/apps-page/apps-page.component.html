@@ -1,7 +1,7 @@
 <div class="wrapper-apps-page container-fill">
   <div class="tool-bar">
     <div class="tool-bar-title">
-      <h5>Project Target</h5>
+      <h5>Project {{ selectedTab }}</h5>
       <a>Home</a> - <a>Project</a>
     </div>
     <div class="tool-bar-button">
@@ -11,7 +11,7 @@
   </div>
 
   <div>
-    <card-apps/>
+    <card-apps (tabChanged)="onTabChanged($event)"/>
   </div>
 
   <router-outlet></router-outlet>

@@ -57,7 +57,7 @@
       <div class="card-bottom-menu">
         <ul>
           <li *ngFor="let tab of tabs" routerLinkActive="active">
-            <a [routerLink]="tab.toLowerCase()">{{ tab }}</a>
+            <a [routerLink]="tab.toLowerCase()" (click)="selectTab(tab)">{{ tab }}</a>
           </li>
         </ul>
       </div>

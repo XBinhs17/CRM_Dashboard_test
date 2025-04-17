@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { MatIconModule } from '@angular/material/icon';
 import { NgFor, NgIf } from '@angular/common';
@@ -16,6 +16,8 @@ import { RouterModule } from '@angular/router';
   styleUrl: './card-apps.component.scss'
 })
 export class CardAppsComponent {
+  @Output() tabChanged = new EventEmitter<string>();
+
   users = [
     { avatar: 'https://i.pravatar.cc/150?img=1' },
     { avatar: 'https://i.pravatar.cc/150?img=2' },
@@ -52,5 +54,6 @@ export class CardAppsComponent {
 
   selectTab(tab: string) {
     this.selectedTab = tab;
+    this.tabChanged.emit(tab);
   }
 }

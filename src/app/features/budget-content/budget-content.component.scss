@@ -1,0 +1,227 @@
+.wrapper-budget {
+  margin: 20px 0;
+  border-radius: 10px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 6px 0px;
+}
+
+.budget-header {
+  padding: 20px;
+  border-bottom: 1px solid #dadada;
+
+  h2 {
+    font-size: 20px;
+  }
+}
+
+.budget-body {
+  padding: 20px;
+
+  .body-row {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 20px;
+
+    .body-row-left {
+      width: 20%;
+
+      p {
+        font-weight: 500;
+      }
+    }
+
+    .body-row-right {
+      width: 75%;
+
+      .status-used {
+        display: flex;
+        justify-content: space-between;
+
+        p {
+          line-height: 1;
+          font-weight: 600;
+        }
+      }
+
+      .status-remain {
+        font-weight: 500;
+        color: #8b8b8b;
+        font-size: 14px;
+      }
+
+      .group-usage-option {
+        display: flex;
+        justify-content: space-between;
+        gap: 10px;
+
+        .usage-option-card {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          border: 1px dashed #e0e0e0;
+          padding: 20px;
+          border-radius: 10px;
+
+          .custom-content {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+
+            .title-usage {
+              font-weight: 600;
+              font-size: 18px;
+            }
+
+            .content-usage {
+              color: #8b8b8b;
+            }
+          }
+        }
+
+        .mat-radio-checked.usage-option-card {
+          border: 2px solid #1976d2;
+
+          .title-usage,
+          .content-usage {
+            color: #1976d2;
+          }
+        }
+      }
+
+      .budget-textarea {
+        width: 100%;
+        padding: 10px;
+        border: none;
+        border-radius: 6px;
+        font-size: 14px;
+        resize: vertical;
+        outline: none;
+        transition: border-color 0.3s ease;
+        background-color: #f5f5f5;
+      }
+
+      .budget-input-wrapper {
+        position: relative;
+        width: 250px;
+
+        input {
+          width: 100%;
+          padding: 8px 30px;
+          text-align: center;
+          font-size: 16px;
+          border: none;
+          border-radius: 6px;
+          background-color: #f5f5f5;
+          color: #838383;
+          font-weight: 500;
+
+          &:focus{
+            background-color: #f0f0f0;
+            outline: none;
+          }
+        }
+
+        button {
+          position: absolute;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          top: 50%;
+          transform: translateY(-50%);
+          width: 24px;
+          height: 24px;
+          border: none;
+          border-radius: 5px;
+          background-color: #d9dbe2;
+          color: #979eb5;
+          font-size: 16px;
+          font-weight: 900;
+          cursor: pointer;
+          transition: background-color 0.2s;
+          z-index: 2;
+
+          &:hover {
+            background-color: #c9c9c9;
+            color: #787a83;
+          }
+
+          &:disabled {
+            background-color: #ccc;
+            cursor: not-allowed;
+          }
+        }
+
+        .btn-decrease {
+          left: 4px;
+        }
+
+        .btn-increase {
+          right: 4px;
+        }
+      }
+
+      .checkbox-group {
+        display: flex;
+        gap: 15px;
+
+        ::ng-deep .mat-mdc-checkbox .mdc-checkbox {
+          border-radius: 6px !important;
+        }
+
+        ::ng-deep .mat-mdc-checkbox .mdc-checkbox .mdc-checkbox__background {
+          border-radius: 6px !important;
+          border: 2px solid transparent !important;
+          background-color: #f0f0f0;
+        }
+
+        ::ng-deep .mat-mdc-checkbox-checked .mdc-checkbox__background {
+          background-color: #1976d2 !important;
+          border-color: #1976d2 !important;
+        }
+
+        ::ng-deep .mat-mdc-checkbox .mdc-checkbox__checkmark-path {
+          stroke: white !important;
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    .body-row {
+      flex-direction: column;
+
+      .body-row-left {
+        width: 100%;
+      }
+
+      .body-row-right {
+        width: 100%;
+
+        .group-usage-option {
+          flex-direction: column;
+        }
+      }
+    }
+  }
+}
+
+.budget-footer{
+  display: flex;
+  justify-content: end;
+  gap: 10px;
+  padding: 20px;
+
+  border-top: 1px solid #dadada;
+
+  button{
+    border-radius: 10px;
+    padding: 10px;
+    border: none;
+    font-weight: 500;
+  }
+
+  .btn-save{
+    background-color: #1b84ff;
+    color: #fff;
+  }
+}

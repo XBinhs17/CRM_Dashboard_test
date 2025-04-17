@@ -1,0 +1,39 @@
+<div class="wrapper-users">
+  <div class="users-header">
+    <div class="header-left">
+      <p>Users (38)</p>
+      <form class="form-search">
+        <input placeholder="Search" />
+        <mat-icon>search</mat-icon>
+      </form>
+    </div>
+    <div class="header-right">
+      <button><mat-icon>grid_view</mat-icon></button>
+      <button><mat-icon>view_list</mat-icon></button>
+      <select class="native-select" [formControl]="selected1" title="Select Time Period">
+        <option value="recently">Recently Updated</option>
+        <option value="lastmonth">Last Month</option>
+        <option value="lastquarter">Last Quarter</option>
+        <option value="lastyear">Last Year</option>
+      </select>
+      <select class="native-select" [formControl]="selected2" title="Select Time Period">
+        <option value="excel">Excel</option>
+        <option value="pdf">Pdf</option>
+        <option value="print">Last Year</option>
+      </select>
+    </div>
+  </div>
+  <div class="users-body">
+    <mat-grid-list cols="3" rowHeight="2:1">
+      <mat-grid-tile>
+        <div class="avatar-user">
+          <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="user name"/>
+        </div>
+        
+      </mat-grid-tile>
+    </mat-grid-list>
+  </div>
+  <div class="users-footer">
+
+  </div>
+</div>

@@ -12,4 +12,9 @@ import { CardAppsComponent } from '../card-apps/card-apps.component';
   styleUrl: './apps-page.component.scss'
 })
 export class AppsPageComponent {
+  selectedTab: string = 'Targets';
+
+  onTabChanged(tabName: string){
+    this.selectedTab = tabName;
+  }
 }

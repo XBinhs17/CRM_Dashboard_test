@@ -20,40 +20,41 @@
 
 <div class="content-targets-page">
   <div cdkDropListGroup class="content-target-group">
-    <div class="example-container">
+
+     <!-- Yet To Start -->
+     <div class="example-container">
       <div class="yet">
-        <h2>Yet To Start <span>2</span></h2>
+        <h2>Yet To Start <span>{{ yetToStart().length }}</span></h2>
         <button><mat-icon>dashboard_customize</mat-icon></button>
       </div>
-
-      <div cdkDropList [cdkDropListData]="yetToStart" class="example-list" (cdkDropListDropped)="drop($event)">
-        <div class="example-box" *ngFor="let item of yetToStart" cdkDrag>
+      <div cdkDropList [cdkDropListData]="yetToStart()" class="example-list" (cdkDropListDropped)="drop($event)">
+        <div class="example-box" *ngFor="let item of yetToStart()" cdkDrag>
           <targets-card [task]="item"></targets-card>
         </div>
       </div>
     </div>
 
+     <!-- In Progress -->
     <div class="example-container">
       <div class="inpro">
-        <h2>In Progress <span>2</span></h2>
+        <h2>In Progress <span>{{ inProgress().length }}</span></h2>
         <button><mat-icon>dashboard_customize</mat-icon></button>
       </div>
-
-
-      <div cdkDropList [cdkDropListData]="inProgress" class="example-list" (cdkDropListDropped)="drop($event)">
-        <div class="example-box" *ngFor="let item of inProgress" cdkDrag>
+      <div cdkDropList [cdkDropListData]="inProgress()" class="example-list" (cdkDropListDropped)="drop($event)">
+        <div class="example-box" *ngFor="let item of inProgress()" cdkDrag>
           <targets-card [task]="item"></targets-card>
         </div>
       </div>
     </div>
 
+    <!-- Completed -->
     <div class="example-container">
       <div class="done">
-        <h2>Completed <span>2</span></h2>
+        <h2>Completed <span>{{ completed().length }}</span></h2>
         <button><mat-icon>dashboard_customize</mat-icon></button>
       </div>
-      <div cdkDropList [cdkDropListData]="completed" class="example-list" (cdkDropListDropped)="drop($event)">
-        <div class="example-box" *ngFor="let item of completed" cdkDrag>
+      <div cdkDropList [cdkDropListData]="completed()" class="example-list" (cdkDropListDropped)="drop($event)">
+        <div class="example-box" *ngFor="let item of completed()" cdkDrag>
           <targets-card [task]="item"></targets-card>
         </div>
       </div>

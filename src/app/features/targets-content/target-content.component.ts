@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { TargetsService } from './../../services/TargetsService.service';
+import { Component, computed, effect, OnInit, signal } from '@angular/core';
 import { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatSelectModule } from '@angular/material/select';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -13,7 +14,6 @@ import {
   transferArrayItem,
 } from '@angular/cdk/drag-drop';
 import { TargetItem } from '../../shared/types/targetItem';
-import { TargetsService } from '../../services/TargetsService.service';
 import { NgFor, NgForOf } from '@angular/common';
 import { TargetCardComponent } from './target-card/target-card.component';
 
@@ -36,23 +36,26 @@ import { TargetCardComponent } from './target-card/target-card.component';
     TargetCardComponent
   ],
 })
-export class TargetContentComponent implements OnInit {
+export class TargetContentComponen implements OnInit{
   selected = new FormControl('recently');
 
-  yetToStart: TargetItem[] = [];
-  inProgress: TargetItem[] = [];
-  completed: TargetItem[] = [];
+  private targets = signal<TargetItem[]>([]);
+  readonly yetToStart = computed(() =>
+    this.targets().filter(t => t.status === 'Yet To Start')
+  )
+  readonly inProgress = computed(() =>
+    this.targets().filter(t => t.status === 'In Progress')
+  )
+  readonly completed = computed(() =>
+    this.targets().filter(t => t.status === 'Completed')
+  )
 
-  constructor(private targetsService: TargetsService) {}
+  constructor(public TargetsService: TargetsService){}
 
   ngOnInit(): void {
-    this.targetsService.getTargets().subscribe((data) => {
-      const flatData = data.flatMap(item => Array.isArray(item) ? item : [item]);
-
-      this.yetToStart = flatData.filter(item => item.status === 'Yet To Start');
-      this.inProgress = flatData.filter(item => item.status === 'In Progress');
-      this.completed = flatData.filter(item => item.status === 'Completed');
-    });
+      this.TargetsService.getTargets().subscribe((data) =>{
+        this.targets.set(data);
+      });
   }
 
   drop(event: CdkDragDrop<TargetItem[]>) {

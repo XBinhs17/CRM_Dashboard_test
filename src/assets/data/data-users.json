@@ -1,0 +1,272 @@
+[
+  {
+    "id": 1,
+    "avatar": "https://randomuser.me/api/portraits/men/32.jpg",
+    "name": "John Doe",
+    "work": "Developer at Loop Inc.",
+    "earnings": "$12,500",
+    "tasks": 42,
+    "sales": "$243,000"
+  },
+  {
+    "id": 2,
+    "avatar": "https://randomuser.me/api/portraits/women/44.jpg",
+    "name": "Emma Watson",
+    "work": "Designer at Sketch Ltd.",
+    "earnings": "$9,200",
+    "tasks": 36,
+    "sales": "$185,400"
+  },
+  {
+    "id": 3,
+    "avatar": "https://randomuser.me/api/portraits/men/21.jpg",
+    "name": "Liam Johnson",
+    "work": "Product Manager at FlowX",
+    "earnings": "$14,750",
+    "tasks": 50,
+    "sales": "$301,000"
+  },
+  {
+    "id": 4,
+    "avatar": "https://randomuser.me/api/portraits/women/65.jpg",
+    "name": "Sophia Lee",
+    "work": "QA Engineer at CheckIt",
+    "earnings": "$8,900",
+    "tasks": 29,
+    "sales": "$143,200"
+  },
+  {
+    "id": 5,
+    "avatar": "https://randomuser.me/api/portraits/men/7.jpg",
+    "name": "Noah Smith",
+    "work": "Marketing Lead at BuzzUp",
+    "earnings": "$10,500",
+    "tasks": 38,
+    "sales": "$219,600"
+  },
+  {
+    "id": 6,
+    "avatar": "https://randomuser.me/api/portraits/women/50.jpg",
+    "name": "Olivia Brown",
+    "work": "Support Specialist at SoftHub",
+    "earnings": "$7,800",
+    "tasks": 24,
+    "sales": "$104,500"
+  },
+  {
+    "id": 7,
+    "avatar": "https://randomuser.me/api/portraits/men/64.jpg",
+    "name": "Mason Garcia",
+    "work": "Developer at CodeFactory",
+    "earnings": "$11,200",
+    "tasks": 47,
+    "sales": "$267,800"
+  },
+  {
+    "id": 8,
+    "avatar": "https://randomuser.me/api/portraits/women/17.jpg",
+    "name": "Ava Martinez",
+    "work": "UX Designer at Interact Inc.",
+    "earnings": "$9,500",
+    "tasks": 33,
+    "sales": "$196,400"
+  },
+  {
+    "id": 9,
+    "avatar": "https://randomuser.me/api/portraits/men/11.jpg",
+    "name": "Ethan Anderson",
+    "work": "Frontend Dev at UIPro",
+    "earnings": "$12,000",
+    "tasks": 41,
+    "sales": "$232,000"
+  },
+  {
+    "id": 10,
+    "avatar": "https://randomuser.me/api/portraits/women/9.jpg",
+    "name": "Mia Rodriguez",
+    "work": "HR at StaffHub",
+    "earnings": "$8,300",
+    "tasks": 30,
+    "sales": "$120,000"
+  },
+  {
+    "id": 11,
+    "avatar": "https://randomuser.me/api/portraits/men/55.jpg",
+    "name": "James Wilson",
+    "work": "SysAdmin at NetCorp",
+    "earnings": "$13,100",
+    "tasks": 46,
+    "sales": "$275,900"
+  },
+  {
+    "id": 12,
+    "avatar": "https://randomuser.me/api/portraits/women/33.jpg",
+    "name": "Charlotte Nguyen",
+    "work": "Data Analyst at DataDash",
+    "earnings": "$10,800",
+    "tasks": 39,
+    "sales": "$215,500"
+  },
+  {
+    "id": 13,
+    "avatar": "https://randomuser.me/api/portraits/men/40.jpg",
+    "name": "Benjamin Moore",
+    "work": "DevOps Engineer at Cloudify",
+    "earnings": "$13,400",
+    "tasks": 43,
+    "sales": "$284,700"
+  },
+  {
+    "id": 14,
+    "avatar": "https://randomuser.me/api/portraits/women/39.jpg",
+    "name": "Amelia Taylor",
+    "work": "Content Manager at WriteIt",
+    "earnings": "$7,900",
+    "tasks": 27,
+    "sales": "$130,800"
+  },
+  {
+    "id": 15,
+    "avatar": "https://randomuser.me/api/portraits/men/3.jpg",
+    "name": "Logan White",
+    "work": "Backend Dev at CodeBase",
+    "earnings": "$12,700",
+    "tasks": 44,
+    "sales": "$256,000"
+  },
+  {
+    "id": 16,
+    "avatar": "https://randomuser.me/api/portraits/women/29.jpg",
+    "name": "Harper Harris",
+    "work": "SEO Specialist at RankIt",
+    "earnings": "$9,800",
+    "tasks": 31,
+    "sales": "$189,400"
+  },
+  {
+    "id": 17,
+    "avatar": "https://randomuser.me/api/portraits/men/18.jpg",
+    "name": "Lucas Martin",
+    "work": "Lead Dev at SoftPoint",
+    "earnings": "$15,200",
+    "tasks": 52,
+    "sales": "$309,000"
+  },
+  {
+    "id": 18,
+    "avatar": "https://randomuser.me/api/portraits/women/18.jpg",
+    "name": "Ella Clark",
+    "work": "Designer at UIFlow",
+    "earnings": "$9,400",
+    "tasks": 34,
+    "sales": "$172,800"
+  },
+  {
+    "id": 19,
+    "avatar": "https://randomuser.me/api/portraits/men/70.jpg",
+    "name": "Jackson Hall",
+    "work": "Manager at Taskify",
+    "earnings": "$11,300",
+    "tasks": 40,
+    "sales": "$223,300"
+  },
+  {
+    "id": 20,
+    "avatar": "https://randomuser.me/api/portraits/women/59.jpg",
+    "name": "Abigail Lewis",
+    "work": "Sales Rep at MarketMe",
+    "earnings": "$8,700",
+    "tasks": 28,
+    "sales": "$137,500"
+  },
+  {
+    "id": 21,
+    "avatar": "https://randomuser.me/api/portraits/men/12.jpg",
+    "name": "Aiden Walker",
+    "work": "Engineer at BuildCo",
+    "earnings": "$13,600",
+    "tasks": 48,
+    "sales": "$261,400"
+  },
+  {
+    "id": 22,
+    "avatar": "https://randomuser.me/api/portraits/women/60.jpg",
+    "name": "Emily Allen",
+    "work": "Project Manager at ManageIT",
+    "earnings": "$10,200",
+    "tasks": 37,
+    "sales": "$198,000"
+  },
+  {
+    "id": 23,
+    "avatar": "https://randomuser.me/api/portraits/men/34.jpg",
+    "name": "Grayson Scott",
+    "work": "Tech Lead at BrightSoft",
+    "earnings": "$14,400",
+    "tasks": 49,
+    "sales": "$293,500"
+  },
+  {
+    "id": 24,
+    "avatar": "https://randomuser.me/api/portraits/women/25.jpg",
+    "name": "Elizabeth Young",
+    "work": "Copywriter at WriteRight",
+    "earnings": "$9,000",
+    "tasks": 32,
+    "sales": "$160,000"
+  },
+  {
+    "id": 25,
+    "avatar": "https://randomuser.me/api/portraits/men/20.jpg",
+    "name": "Daniel King",
+    "work": "Data Scientist at AI Lab",
+    "earnings": "$13,900",
+    "tasks": 45,
+    "sales": "$280,200"
+  },
+  {
+    "id": 26,
+    "avatar": "https://randomuser.me/api/portraits/women/21.jpg",
+    "name": "Victoria Wright",
+    "work": "Community Manager at Chatly",
+    "earnings": "$8,400",
+    "tasks": 26,
+    "sales": "$126,000"
+  },
+  {
+    "id": 27,
+    "avatar": "https://randomuser.me/api/portraits/men/28.jpg",
+    "name": "Jayden Green",
+    "work": "Intern at DevStart",
+    "earnings": "$5,600",
+    "tasks": 18,
+    "sales": "$87,000"
+  },
+  {
+    "id": 28,
+    "avatar": "https://randomuser.me/api/portraits/women/15.jpg",
+    "name": "Chloe Adams",
+    "work": "Growth Marketer at Launchify",
+    "earnings": "$10,000",
+    "tasks": 29,
+    "sales": "$150,000"
+  },
+  {
+    "id": 29,
+    "avatar": "https://randomuser.me/api/portraits/men/5.jpg",
+    "name": "David Evans",
+    "work": "AI Researcher at BrainLab",
+    "earnings": "$16,200",
+    "tasks": 55,
+    "sales": "$320,000"
+  },
+  {
+    "id": 30,
+    "avatar": "https://randomuser.me/api/portraits/women/41.jpg",
+    "name": "Grace Cooper",
+    "work": "Recruiter at PeopleFind",
+    "earnings": "$7,700",
+    "tasks": 25,
+    "sales": "$113,400"
+  }
+]

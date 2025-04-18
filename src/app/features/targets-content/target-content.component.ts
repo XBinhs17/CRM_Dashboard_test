@@ -14,7 +14,7 @@ import {
   transferArrayItem,
 } from '@angular/cdk/drag-drop';
 import { TargetItem } from '../../shared/types/targetItem';
-import { NgFor, NgForOf, NgIf } from '@angular/common';
+import { NgClass, NgFor, NgForOf } from '@angular/common';
 import { TargetCardComponent } from './target-card/target-card.component';
 import { MatTableModule } from '@angular/material/table';
 
@@ -30,44 +30,56 @@ import { MatTableModule } from '@angular/material/table';
     ReactiveFormsModule,
     CdkDropListGroup,
     CdkDropList,
-    CdkDrag,
     NgFor,
     NgForOf,
     MatIconModule,
     TargetCardComponent,
     MatTableModule,
+    NgClass,
   ],
 })
-export class TargetContentComponen implements OnInit{
+export class TargetContentComponen implements OnInit {
   selected = new FormControl('recently');
 
   //state theo dõi đang dùng view nào
   viewMode = signal<'grid' | 'table'>('grid');
-
   public targets = signal<TargetItem[]>([]);
-
   displayedColumns: string[] = ['name', 'status', 'updated'];
 
+  connectedDropLists: string[] = [];
 
-  //kh fix cứng
-  readonly yetToStart = computed(() =>
-    this.targets().filter(t => t.status === 'Yet To Start')
-  )
-  readonly inProgress = computed(() =>
-    this.targets().filter(t => t.status === 'In Progress')
-  )
-  readonly completed = computed(() =>
-    this.targets().filter(t => t.status === 'Completed')
-  )
+  readonly statusList = computed(() => {
+    const uniqueStatuses = new Set<string>();
+    this.targets().forEach((item) => uniqueStatuses.add(item.status));
+    this.connectedDropLists = Array.from(uniqueStatuses);
+    return Array.from(uniqueStatuses);
+  });
 
-  constructor(public targetsService: TargetsService){
-    effect(() =>{
+  targetsByStatus(status: string): TargetItem[] {
+    return this.targets().filter((item) => item.status === status);
+  }
+
+  getStatusClass(status: string): string {
+    switch (status) {
+      case 'Yet To Start':
+        return 'text-danger';
+      case 'In Progress':
+        return 'text-warning';
+      case 'Completed':
+        return 'text-success';
+      default:
+        return 'text-secondary';
+    }
+  }
+
+  constructor(public targetsService: TargetsService) {
+    effect(() => {
       this.targets.set(this.targetsService.targets());
-    })
+    });
   }
 
   ngOnInit(): void {
-      this.targetsService.fetchTargets();
+    this.targetsService.fetchTargets();
   }
 
   drop(event: CdkDragDrop<TargetItem[]>) {
@@ -78,6 +90,11 @@ export class TargetContentComponen implements OnInit{
         event.currentIndex
       );
     } else {
+      const movedItem = event.previousContainer.data[event.previousIndex];
+
+      const newStatus = event.container.id;
+      movedItem.status = newStatus;
+
       transferArrayItem(
         event.previousContainer.data,
         event.container.data,
@@ -86,5 +103,4 @@ export class TargetContentComponen implements OnInit{
       );
     }
   }
-
 }

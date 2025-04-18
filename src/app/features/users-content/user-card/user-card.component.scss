@@ -1,27 +1,15 @@
 .card-user {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   padding: 30px;
-  gap: 0.5rem;
   width: 400px;
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
   border-radius: 10px;
 
-  .user-info {
-    text-align: center;
-    line-height: 1;
-    margin: 0;
-    h6{
-      font-weight: 600;
-    }
-  }
+}
 
-  .user-more {
-    display: flex;
-    gap: 10px;
-    justify-content: space-between;
-    width: 100%;
-    margin-top: 0.5rem;
-  }
+.user-more {
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 0.5rem;
 }

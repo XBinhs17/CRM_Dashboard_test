@@ -6,51 +6,35 @@
   margin: 30px 0;
 }
 
-.header-targets-left {
+.header-targets-left,
+.header-targets-right {
   display: flex;
   align-items: center;
-  height: 100%;
   gap: 10px;
+}
 
-
+.header-targets-left {
   h4 {
     line-height: 1;
     margin: 0;
     font-size: 18px;
   }
 
-  .filter-selected {
-    display: flex;
-    align-items: center;
-    height: 100%;
+  .filter-selected h5 {
+    margin: 0;
+    font-size: 14px;
+    color: #99A1B7;
+    font-weight: 500;
+  }
 
-    h5 {
-      line-height: 1;
-      margin: 0;
-      font-size: 14px;
-      color: #99A1B7;
-      font-weight: 500;
-    }
-
-    .icon-down {
-      font-size: 18px;
-      color: #99A1B7;
-      height: 100%;
-      vertical-align: middle;
-    }
+  .icon-down {
+    font-size: 18px;
+    color: #99A1B7;
   }
 }
 
 .header-targets-right {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 10px;
-
   button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     width: 35px;
     height: 35px;
     border: none;
@@ -63,9 +47,7 @@
     font-size: 14px;
     border-radius: 5px;
     color: #333;
-    border: none;
     background-color: #F9F9F9;
-    outline: none;
     cursor: pointer;
 
     &:focus {
@@ -75,158 +57,176 @@
 }
 
 .content-targets-page {
-
   .content-target-group {
     display: flex;
     flex-wrap: wrap;
     gap: 25px;
 
-    .example-container {
-      flex: 1 1 30%;
-      width: 400px;
-      max-width: 100%;
-      vertical-align: top;
+    .kanban-column {
+      display: flex;
+      flex-direction: column;
+      height: 500px;
 
-      .btn-create-target{
-        width: 100%;
-        font-weight: 600;
+      .kanban-column-header {
+        flex-shrink: 0;
+        margin-top: 25px;
         padding: 10px;
+        font-weight: bold;
+        background-color: #f4f4f4;
+        border-bottom: 1px solid #ccc;
       }
 
-      .style-header-ex {
+      .kanban-card-list {
+        flex-grow: 1;
+        overflow-y: auto;
+        padding: 10px;
+        background-color: #fff;
+        border-radius: 5px;
+
         display: flex;
-        justify-content: space-between;
-        align-items: center;
+        flex-direction: column;
+        gap: 10px;
+      }
+    }
 
-        button {
-          padding: 5px;
-          border: none;
-          background-color: transparent;
-          border-radius: 8px;
 
-          &:hover {
-            background-color: #bddcff;
+      .example-container {
+        flex: 1 1 30%;
+        width: 400px;
+        max-width: 100%;
+
+        .btn-create-target {
+          width: 100%;
+          font-weight: 600;
+          padding: 10px;
+        }
+
+        .style-header-ex {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+
+          button {
+            padding: 5px;
+            border: none;
+            background-color: transparent;
+            border-radius: 8px;
+
+            &:hover {
+              background-color: #bddcff;
+
+              mat-icon {
+                color: #1B84FF;
+                transition: all .2s ease-in-out;
+              }
+            }
+
             mat-icon {
-              color: #1B84FF;
-              transition: all .2s ease-in-out;
+              color: #99A1B7;
+              transition: all .1s linear;
             }
           }
 
-          mat-icon {
-            color: #99A1B7;
-            padding: 0;
-            margin: 0;
-            vertical-align: middle;
-            transition: all .1s linear;
+          h2 {
+            font-size: 20px;
+            padding: 5px;
+
+            span {
+              color: #99A1B7;
+              font-size: 18px;
+            }
           }
         }
 
-        h2 {
-          font-size: 20px;
-          padding: 5px;
+        .yet,
+        .inpro,
+        .done {
+          @extend .style-header-ex;
+        }
 
-          span {
-            color: #99A1B7;
-            font-size: 18px;
-          }
+        .yet {
+          border-bottom: 3px solid #F6C000;
+        }
+
+        .inpro {
+          border-bottom: 3px solid #1B84FF;
+        }
+
+        .done {
+          border-bottom: 3px solid #17C653;
         }
       }
 
-      .yet {
-        @extend .style-header-ex;
-        border-bottom: 3px solid #F6C000;
+      .example-list {
+        min-height: 60px;
+        border-radius: 4px;
+        margin-top: 25px;
+
+        &.cdk-drop-list-dragging.cdk-drop-list-receiving {
+          background-color: #e6f0ff;
+          border: 2px dashed #1B84FF;
+        }
       }
 
-      .inpro {
-        @extend .style-header-ex;
-        border-bottom: 3px solid #1B84FF;
+      .example-box {
+        margin-bottom: 25px;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        cursor: move;
+
+        &.cdk-drag-preview {
+          background-color: #dbefff;
+          border: 2px solid #1B84FF;
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        &.cdk-drag-placeholder {
+          background: transparent;
+          opacity: 0.2;
+        }
       }
 
-      .done {
-        @extend .style-header-ex;
-        border-bottom: 3px solid #17C653;
-      }
-    }
-
-    .example-list {
-      min-height: 60px;
-      border-radius: 4px;
-      margin-top: 25px;
-      transition: background-color 0.3s ease;
-
-      // Highlight vùng drop khi có thể thả vào
-      &.cdk-drop-list-dragging.cdk-drop-list-receiving {
-        background-color: #e6f0ff;
-        border: 2px dashed #1B84FF;
-      }
-    }
-
-    .example-box {
-      margin-bottom: 25px;
-      background-color: #fff;
-      border-radius: 8px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-      cursor: move;
-      transition: transform 0.25s ease-in-out, background-color 0.2s;
-
-      // Khi đang được kéo (preview)
-      &.cdk-drag-preview {
-        background-color: #dbefff;
-        border: 2px solid #1B84FF;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      .cdk-drag-preview {
+        box-sizing: border-box;
+        border-radius: 4px;
+        box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2),
+          0 8px 10px 1px rgba(0, 0, 0, 0.14),
+          0 3px 14px 2px rgba(0, 0, 0, 0.12);
       }
 
-      // Placeholder trong danh sách khi đang kéo
-      &.cdk-drag-placeholder {
-        background: transparent;
+      .cdk-drag-placeholder {
+        opacity: 0;
+      }
+
+      .cdk-drag-animating {
+        transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+      }
+
+      .example-box:last-child {
         border: none;
-        opacity: 0.2;
+      }
+
+      .example-list.cdk-drop-list-dragging .example-box:not(.cdk-drag-placeholder) {
+        transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+      }
+
+      .example-box.cdk-drag-animating {
+        transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1), background-color 0.2s;
       }
     }
-
-    .cdk-drag-preview {
-      box-sizing: border-box;
-      border-radius: 4px;
-      box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2),
-        0 8px 10px 1px rgba(0, 0, 0, 0.14),
-        0 3px 14px 2px rgba(0, 0, 0, 0.12);
-    }
-
-    .cdk-drag-placeholder {
-      opacity: 0;
-    }
-
-    .cdk-drag-animating {
-      transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
-    }
-
-    .example-box:last-child {
-      border: none;
-    }
-
-    .example-list.cdk-drop-list-dragging .example-box:not(.cdk-drag-placeholder) {
-      transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
-    }
-
-    .example-box.cdk-drag-animating {
-      transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1), background-color 0.2s;
-    }
-
-
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .header-targets-right {
-    margin-top: 20px;
   }
 
-  .content-targets-page {
+  @media screen and (max-width: 768px) {
+    .header-targets-right {
+      margin-top: 20px;
+    }
 
-    .content-target-group {
-      flex-direction: column;
-      width: 100%;
-      align-items: center;
+    .content-targets-page {
+      .content-target-group {
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+      }
     }
   }
-}

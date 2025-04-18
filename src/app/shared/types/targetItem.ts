@@ -3,7 +3,7 @@ export interface TargetItem{
   name: string;
   description: string;
   avatars: string[];
-  status: 'Yet To Start' | 'In Progress' | 'Completed';
+  status: string;
   file: number,
   message: number
 }

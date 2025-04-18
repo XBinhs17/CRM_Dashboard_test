@@ -2,20 +2,19 @@
   display: flex;
   align-items: center;
   flex-direction: column;
-  gap: 1rem;
 
   .user-avatar {
     flex-shrink: 0;
+    margin-bottom: 15px;
   }
 
   h6 {
-    margin: 0;
-    font-size: 1rem;
     font-weight: 600;
   }
 
   span {
     font-size: 0.875rem;
     color: gray;
+    margin-bottom: 15px;
   }
 }

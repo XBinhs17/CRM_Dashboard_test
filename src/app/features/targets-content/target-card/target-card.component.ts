@@ -2,6 +2,7 @@ import { NgFor } from '@angular/common';
 import { Component, Input } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 import { AvatarComponent } from '../../../components/avatar/avatar.component';
+import { CdkDrag } from '@angular/cdk/drag-drop';
 
 @Component({
   selector: 'targets-card',
@@ -11,7 +12,8 @@ import { AvatarComponent } from '../../../components/avatar/avatar.component';
   imports: [
     MatIconModule,
     NgFor,
-    AvatarComponent
+    AvatarComponent,
+    CdkDrag
   ],
 })
 export class TargetCardComponent {

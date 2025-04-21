@@ -18,5 +18,6 @@ export class TargetsService{
     this.http.get<TargetItem[]>('assets/data/data-target.json').subscribe(data => {
       this._targets.set(data);
   })
+
   }
 }

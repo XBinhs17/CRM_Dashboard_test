@@ -8,7 +8,7 @@
       "https://picsum.photos/200/300",
       "https://picsum.photos/200/300"
     ],
-    "status": "Yet To Start",
+    "status": "YetToStart",
     "file": 1,
     "message": 3
   },
@@ -20,7 +20,7 @@
       "https://picsum.photos/200/300",
       "https://picsum.photos/200/300"
     ],
-    "status": "In Progress",
+    "status": "InProgress",
     "file": 3,
     "message": 9
   },
@@ -45,7 +45,7 @@
       "https://picsum.photos/200/300",
       "https://picsum.photos/200/300"
     ],
-    "status": "In Progress",
+    "status": "InProgress",
     "file": 1,
     "message": 5
   },
@@ -57,7 +57,7 @@
       "https://picsum.photos/200/300",
       "https://picsum.photos/200/300"
     ],
-    "status": "Yet To Start",
+    "status": "YetToStart",
     "file": 7,
     "message": 12
   },
@@ -81,7 +81,7 @@
       "https://picsum.photos/200/300",
       "https://picsum.photos/200/300"
     ],
-    "status": "Cancel",
+    "status": "InProgress",
     "file": 1,
     "message": 3
   },
@@ -93,7 +93,7 @@
       "https://picsum.photos/200/300",
       "https://picsum.photos/200/300"
     ],
-    "status": "New",
+    "status": "Completed",
     "file": 1,
     "message": 3
   },
@@ -105,7 +105,19 @@
       "https://picsum.photos/200/300",
       "https://picsum.photos/200/300"
     ],
-    "status": "Loading",
+    "status": "YetToStart",
+    "file": 1,
+    "message": 3
+  },
+  {
+    "position": "Phase 2.6 QA",
+    "name": "Bug Fix Verification",
+    "description": "Verify fixes for critical bugs reported in sprint 2.5.",
+    "avatars": [
+      "https://picsum.photos/200/300",
+      "https://picsum.photos/200/300"
+    ],
+    "status": "NewProgress",
     "file": 1,
     "message": 3
   }

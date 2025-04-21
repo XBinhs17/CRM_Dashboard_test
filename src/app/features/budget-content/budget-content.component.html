@@ -10,7 +10,8 @@
         <p>Current Status</p>
       </div>
       <div class="body-row-right">
-       <progress-status [label]="'Budget'" [used]="status.used" [total]="status.total" [remainingTargets]="status.remainingTargets"/>
+        <progress-status [label]="'Budget'" [used]="status.used" [total]="status.total"
+          [remainingTargets]="status.remainingTargets" />
       </div>
     </div>
 
@@ -67,8 +68,17 @@
       </div>
 
       <div class="body-row-right">
-        <quantity-input [value]="value" [min]="1000" [max]="50000" [step]="1000" (valueChange)="value = $event" />
+        <quantity-input
+          [value]="value()"
+          [min]="1000"
+          [max]="50000"
+          [step]="1000"
+          [currencyFormat]="'VND'"
+          (valueChange)="value.set($event)"
+        />
+
       </div>
+
     </div>
 
     <div class="body-row">

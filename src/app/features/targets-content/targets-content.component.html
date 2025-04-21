@@ -21,7 +21,7 @@
 <div class="content-targets-page">
   <div cdkDropListGroup class="content-target-group">
     <div class="kanban-board row">
-      <!--  -->
+      <!-- chưa tách component -->
       <div class="kanban-column col-md-6" *ngFor="let status of statusList()" [attr.data-status]="status">
         <div class="kanban-column-header" [ngClass]="getStatusClass(status)">
           {{ status }} <span>({{ targetsByStatus(status).length }})</span>
@@ -40,7 +40,49 @@
         </div>
       </div>
       <!--  -->
+
+      <div class="text-center fs-1 mt-md-5 ">
+          Đã tách
+      </div>
+
+      <!-- tách v2 -->
+        <div CdkDropListGroup>
+          <kanban-column
+          class="col-md-6"
+            *ngFor="let status of statusList()"
+            [status]="status"
+            [items]="targetsByStatus(status)"
+            [connectedDropLists]="connectedDropLists"
+            [getStatusClass]="getStatusClass"
+            (itemDropped)="drop($event)"
+          >
+            <ng-container *ngFor="let target of targetsByStatus(status)">
+              <targets-card [task]="target"></targets-card>
+            </ng-container>
+          </kanban-column>
+        </div>
+
+
+
+      <!--  -->
+<!--  -->
+      <!-- đã tách -->
+      <!-- <ng-template #targetCard let-task>
+        <div cdkDrag>
+          <targets-card [task]="task"></targets-card>
+        </div>
+      </ng-template> -->
+
+      <!-- <app-kanban-column
+        class="col-md-6"
+        *ngFor="let status of statusList()"
+        [title]="status"
+        [items]="targets()"
+        [connectedDropLists]="connectedDropLists"
+        [titleClashsFn]="getStatusClass"
+        [filterFn]="getFilterFn(status)"
+        [itemTemplate]="targetCard" (dropped)="drop($event)">
+      </app-kanban-column> -->
     </div>
   </div>
 </div>
-

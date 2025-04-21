@@ -11,6 +11,7 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 })
 export class ProgressStatusComponent{
   @Input() label: string ='';
+  //đổi input thành dùng signal
   @Input() used: number = 0;
   @Input() total: number = 0;
   @Input() remainingTargets: number = 0;

@@ -16,6 +16,7 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { QuantityInputComponent } from '../../components/quantity-input/quantity-input.component';
 import { ProgressStatusComponent } from '../../components/progress-status/progress-status.component';
+import { CurrencyFormatPipe } from '../../shared/pipes/currency.pipe';
 
 @Component({
   selector: 'budget-content',
@@ -29,29 +30,15 @@ import { ProgressStatusComponent } from '../../components/progress-status/progre
     MatCheckboxModule,
     MatSlideToggleModule,
     QuantityInputComponent,
-    ProgressStatusComponent
+    ProgressStatusComponent,
+    CurrencyFormatPipe
   ],
 })
 export class BudgetContentComponent {
-  value: number = 11000;
-  minValue: number = 1000;
-  maxValue: number = 50000;
-  step: number = 1000;
+  value = signal(11000);
 
-  get formattedValue(): string {
-    return this.value.toFixed(2);
-  }
-
-  increase(): void {
-    if (this.value + this.step <= this.maxValue) {
-      this.value += this.step;
-    }
-  }
-
-  decrease(): void {
-    if (this.value - this.step >= this.minValue) {
-      this.value -= this.step;
-    }
+  onValueChange(val: number) {
+    this.value.set(val);
   }
 
   currentStatus = signal<CurrentStatus | null>(null);

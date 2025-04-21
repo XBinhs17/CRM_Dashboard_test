@@ -1,29 +1,37 @@
-import { Component, Input, Output, EventEmitter } from "@angular/core";
+import { Component, Input, Output, EventEmitter, signal, input } from "@angular/core";
+import { CurrencyFormatPipe } from "../../shared/pipes/currency.pipe";
 
 @Component({
   selector: 'quantity-input',
+  standalone: true,
   templateUrl: './quantity-input.component.html',
-  styleUrls: ['./quantity-input.component.scss']
+  styleUrls: ['./quantity-input.component.scss'],
+  imports: [
+    CurrencyFormatPipe
+  ]
 })
 export class QuantityInputComponent{
-  @Input() value: number = 0;
-  @Input() min: number = 0;
-  @Input() max: number = 100;
-  @Input() step: number =1;
+
+  value = input<number>(0);
+  min = input<number>(0);
+  max = input<number>(100);
+  step = input<number>(1);
+  currencyFormat = input<string>('USD');
 
   @Output() valueChange = new EventEmitter<number>();
 
   increase(): void {
-    if (this.value + this.step <= this.max) {
-      this.value += this.step;
-      this.valueChange.emit(this.value);
+    const newValue = this.value() + this.step();
+    if (newValue <= this.max()) {
+      this.valueChange.emit(newValue);
     }
   }
 
   decrease(): void {
-    if (this.value - this.step >= this.min) {
-      this.value -= this.step;
-      this.valueChange.emit(this.value);
+    const newValue = this.value() - this.step();
+    if (newValue >= this.min()) {
+      this.valueChange.emit(newValue);
     }
   }
+
 }

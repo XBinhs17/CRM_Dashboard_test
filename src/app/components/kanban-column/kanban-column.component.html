@@ -1,0 +1,16 @@
+<div class="kanban-column" [attr.data-status]="status">
+  <div class="kanban-column-header" [ngClass]="getStatusClass(status)">
+    {{ status }} <span>({{ items.length }})</span>
+  </div>
+
+    <div
+      cdkDropList
+      [cdkDropListData]="items"
+      [cdkDropListConnectedTo]="connectedDropLists"
+      [id]="status"
+      class="kanban-card-list"
+      (cdkDropListDropped)="onDrop($event)">
+
+      <ng-content></ng-content>
+    </div>
+</div>

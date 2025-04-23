@@ -1,4 +1,4 @@
-import { Component, Input, Output, EventEmitter, signal, input } from "@angular/core";
+import { Component, Input, Output, EventEmitter, signal, input, output } from "@angular/core";
 import { CurrencyFormatPipe } from "../../shared/pipes/currency.pipe";
 
 @Component({
@@ -18,7 +18,11 @@ export class QuantityInputComponent{
   step = input<number>(1);
   currencyFormat = input<string>('USD');
 
-  @Output() valueChange = new EventEmitter<number>();
+  //old
+  // @Output() valueChange = new EventEmitter<number>();
+
+  //new
+  valueChange = output<number>();
 
   increase(): void {
     const newValue = this.value() + this.step();

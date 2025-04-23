@@ -35,7 +35,7 @@ import { NgClass, NgFor } from '@angular/common';
     KanbanColumnComponent,
     NgFor,
     NgClass,
-    CdkDropList
+    CdkDropList,
   ],
 })
 export class TargetContentComponen implements OnInit {
@@ -73,23 +73,19 @@ export class TargetContentComponen implements OnInit {
     }
   }
 
-  constructor(public targetsService: TargetsService) {
-
-    //kh cần effect
-    effect(() => {
-      this.targets.set(this.targetsService.targets());
-    });
-  }
+  constructor(public targetsService: TargetsService) {}
 
   ngOnInit(): void {
     this.targetsService.fetchTargets();
+
+    //bỏ effect và gán vào đây
+    this.targets.set(this.targetsService.targets());
   }
 
   //nằm dưới service(các xử lú dữ liệu)
   getFilterFn(status: string) {
     return (item: any, title: string) => item.status === status;
   }
-
 
   drop(event: CdkDragDrop<TargetItem[]>) {
     if (event.previousContainer === event.container) {

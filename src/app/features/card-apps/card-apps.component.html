@@ -52,7 +52,7 @@
     </div>
   </div>
 
-  <div class="row card-bottom">
+  <!-- <div class="row card-bottom">
     <div class="col-md-12 p-0">
       <div class="card-bottom-menu">
         <ul>
@@ -62,6 +62,21 @@
         </ul>
       </div>
     </div>
-  </div>
+  </div> -->
 
+  <!-- Tabs không còn sử dụng routerLink -->
+  <div class="row card-bottom">
+    <div class="col-md-12 p-0">
+      <div class="card-bottom-menu">
+        <ul>
+          <li *ngFor="let tab of tabs" (click)="selectTab(tab)" [class.active]="tab === selectedTab">
+            <a>{{ tab }}</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
 </div>
+
+  <!-- Container để tạo component động -->
+  <div #container></div>

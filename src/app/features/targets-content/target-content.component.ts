@@ -35,17 +35,13 @@ import { NgClass, NgFor } from '@angular/common';
     KanbanColumnComponent,
     NgFor,
     NgClass,
-    CdkDropList,
   ],
 })
 export class TargetContentComponen implements OnInit {
   selected = new FormControl('recently');
 
   //state theo dõi đang dùng view nào
-  // viewMode = signal<'grid' | 'table'>('grid');
   public targets = signal<TargetItem[]>([]);
-
-  displayedColumns: string[] = ['name', 'status', 'updated'];
 
   connectedDropLists: string[] = [];
 
@@ -53,6 +49,7 @@ export class TargetContentComponen implements OnInit {
     const uniqueStatuses = new Set<string>();
     this.targets().forEach((item) => uniqueStatuses.add(item.status));
     this.connectedDropLists = Array.from(uniqueStatuses);
+    console.log('connectedDropLists:', this.connectedDropLists);
     return Array.from(uniqueStatuses);
   });
 
@@ -77,14 +74,7 @@ export class TargetContentComponen implements OnInit {
 
   ngOnInit(): void {
     this.targetsService.fetchTargets();
-
-    //bỏ effect và gán vào đây
     this.targets.set(this.targetsService.targets());
-  }
-
-  //nằm dưới service(các xử lú dữ liệu)
-  getFilterFn(status: string) {
-    return (item: any, title: string) => item.status === status;
   }
 
   drop(event: CdkDragDrop<TargetItem[]>) {
@@ -95,17 +85,33 @@ export class TargetContentComponen implements OnInit {
         event.currentIndex
       );
     } else {
-      const movedItem = event.previousContainer.data[event.previousIndex];
-
-      const newStatus = event.container.id;
-      movedItem.status = newStatus;
-
       transferArrayItem(
         event.previousContainer.data,
         event.container.data,
         event.previousIndex,
         event.currentIndex
       );
+
+      // Update the status of the moved item
+      const movedItem = event.container.data[event.currentIndex];
+      movedItem.status = event.container.id;
+
+      // Update the signal
+      this.targets.update(current => [...current]);
     }
   }
+
+  // drop(event: CdkDragDrop<string[]>) {
+  //   console.log('drop event:', event);
+  //   if (event.previousContainer === event.container) {
+  //     moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
+  //   } else {
+  //     transferArrayItem(
+  //       event.previousContainer.data,
+  //       event.container.data,
+  //       event.previousIndex,
+  //       event.currentIndex,
+  //     );
+  //   }
+  // }
 }

@@ -3,8 +3,6 @@ import {
   Component,
   computed,
   effect,
-  ElementRef,
-  HostListener,
   signal,
 } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
@@ -15,9 +13,6 @@ import { MatRadioModule } from '@angular/material/radio';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { QuantityInputComponent } from '../../components/quantity-input/quantity-input.component';
-import { ProgressStatusComponent } from '../../components/progress-status/progress-status.component';
-import { CurrencyFormatPipe } from '../../shared/pipes/currency.pipe';
-
 @Component({
   selector: 'budget-content',
   templateUrl: './budget-content.component.html',
@@ -30,18 +25,16 @@ import { CurrencyFormatPipe } from '../../shared/pipes/currency.pipe';
     MatCheckboxModule,
     MatSlideToggleModule,
     QuantityInputComponent,
-    ProgressStatusComponent,
-    CurrencyFormatPipe
   ],
 })
 export class BudgetContentComponent {
   value = signal(11000);
 
+  currentStatus = signal<CurrentStatus | null>(null);
+
   onValueChange(val: number) {
     this.value.set(val);
   }
-
-  currentStatus = signal<CurrentStatus | null>(null);
 
   constructor(private budgetService: BudgetService) {
     effect(() => {

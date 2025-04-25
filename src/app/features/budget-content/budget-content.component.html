@@ -10,9 +10,14 @@
         <p>Current Status</p>
       </div>
       <div class="body-row-right">
-        <progress-status [label]="'Budget'" [used]="status.used" [total]="status.total"
-          [remainingTargets]="status.remainingTargets" />
+        <div class="status-used d-flex justify-content-between">
+          <p>Budget</p>
+          <p>{{ currentStatus()?.used }} of {{ currentStatus()?.total }} Used</p>
+        </div>
+        <mat-progress-bar class="prog-current" mode="determinate" [value]="progressValue()"></mat-progress-bar>
+        <div class="status-remain">{{ currentStatus()?.remainingTargets }} Targets are remaining</div>
       </div>
+
     </div>
 
     <div class="body-row">
@@ -68,14 +73,8 @@
       </div>
 
       <div class="body-row-right">
-        <quantity-input
-          [value]="value()"
-          [min]="1000"
-          [max]="50000"
-          [step]="1000"
-          [currencyFormat]="'USD'"
-          (valueChange)="value.set($event)"
-        />
+        <quantity-input [value]="value()" [min]="1000" [max]="50000" [step]="1000" [currencyFormat]="'USD'"
+          (valueChange)="value.set($event)" />
 
       </div>
 

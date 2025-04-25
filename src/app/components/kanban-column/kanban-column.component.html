@@ -1,16 +1,20 @@
 <div class="kanban-column" [attr.data-status]="status">
-  <div class="kanban-column-header" [ngClass]="getStatusClass(status)">
-    {{ status }} <span>({{ items.length }})</span>
+  <div class="kanban-column-header" [ngClass]="getStatusClass()(status())">
+    {{ status() }} <span>({{ items().length }})</span>
   </div>
 
-    <div
-      cdkDropList
-      [cdkDropListData]="items"
-      [cdkDropListConnectedTo]="connectedDropLists"
-      [id]="status"
-      class="kanban-card-list"
-      (cdkDropListDropped)="onDrop($event)">
-
-      <ng-content></ng-content>
-    </div>
+  <div
+    cdkDropList
+    [cdkDropListData]="items()"
+    [cdkDropListConnectedTo]="connectedDropLists()"
+    [id]="status()"
+    class="kanban-card-list"
+    (cdkDropListDropped)="dropFn()($event)"
+  >
+    <ng-container *ngFor="let item of items()">
+      <ng-container
+        *ngTemplateOutlet="itemTemplate(); context: { $implicit: item }"
+      ></ng-container>
+    </ng-container>
+  </div>
 </div>

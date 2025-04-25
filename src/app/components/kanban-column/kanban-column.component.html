@@ -1,4 +1,4 @@
-<div class="kanban-column" [attr.data-status]="status">
+<div class="kanban-column" [attr.data-status]="status()">
   <div class="kanban-column-header" [ngClass]="getStatusClass()(status())">
     {{ status() }} <span>({{ items().length }})</span>
   </div>

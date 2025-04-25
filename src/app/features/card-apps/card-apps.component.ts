@@ -74,7 +74,6 @@ export class CardAppsComponent {
     this.createDynamicComponent(selectedTab);
   }
 
-
   createDynamicComponent(tab: keyof typeof this.tabComponentMapping) {
     this.container.clear();
 
